@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Monte Carlo en el Dominó</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #34495e;
+            color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .boton {
+            background: linear-gradient(45deg, #3498db, #1abc9c);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        h2 {
+            color: #1abc9c;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .formula {
+            background-color: #2c3e50;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Método Monte Carlo en el Dominó</h1>
+        <h2>Información</h2>
+        <p>El Método de Monte Carlo es una técnica de simulación estadística que utiliza la generación de números
+            aleatorios para resolver problemas que no tienen una solución analítica sencilla. En el contexto de un juego
+            de dominó, se podría utilizar para simular jugadas y evaluar estrategias o para determinar probabilidades en
+            función de diversas configuraciones del juego.</p>
+
+        <h3>Método de Monte Carlo en el juego de dominó</h3>
+        <p>El proceso básico implica realizar múltiples simulaciones aleatorias para obtener resultados aproximados. A
+            continuación, se presentan las fórmulas utilizadas en este método:</p>
+
+        <h4>Fórmulas clave</h4>
+        <ul>
+            <li><strong>Cálculo de probabilidades:</strong>
+                <p>La probabilidad de un evento \( E \) se calcula como:</p>
+                <div class="formula">
+                    P(E) = Número de simulaciones favorables a E / Número total de simulaciones
+                </div>
+            </li>
+            <li><strong>Valor esperado:</strong>
+                <p>El valor esperado de una variable aleatoria \( X \) (por ejemplo, número de turnos por partida) se
+                    calcula como:</p>
+                <div class="formula">
+                    E[X] = (1 / N) * Σ X<sub>i</sub>, donde X<sub>i</sub> son los resultados de cada simulación.
+                </div>
+            </li>
+            <li><strong>Varianza:</strong>
+                <p>La varianza mide la dispersión de los resultados:</p>
+                <div class="formula">
+                    Var(X) = (1 / N) * Σ (X<sub>i</sub> - E[X])²
+                </div>
+            </li>
+            <li><strong>Desviación estándar:</strong>
+                <p>Se calcula como la raíz cuadrada de la varianza:</p>
+                <div class="formula">
+                    Desv(X) = √Var(X)
+                </div>
+            </li>
+        </ul>
+
+        <h3>Aplicaciones en el Dominó</h3>
+        <p>Estas fórmulas se utilizan para analizar diferentes aspectos del juego, como:</p>
+        <ul>
+            <li>Probabilidad de ganar según las fichas iniciales.</li>
+            <li>Promedio de turnos para finalizar una partida.</li>
+            <li>Impacto de estrategias específicas en los resultados.</li>
+        </ul>
+    </div>
+    <a href="ok.html">
+        <button class="boton">Regresar</button>
+    </a>
+</body>
+
+</html>

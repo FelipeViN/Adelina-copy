@@ -1,0 +1,470 @@
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+
+  #probabilidades-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #34495e;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .setup {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .section.active {
+    display: flex;
+  }
+
+  .boton {
+    background: linear-gradient(45deg, #3498db, #1abc9c);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  .boton:hover {
+          transform: scale(1.05);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .container {
+          background-color: #34495e;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+      }
+
+      .setup input {
+          padding: 10px;
+          font-size: 16px;
+          border: 2px solid #ddd;
+          border-radius: 5px;
+          width: 100px;
+      }
+      .juego-container {
+          display: grid;
+          grid-template-columns: 200px 1fr 200px;
+          grid-template-rows: 200px 1fr 200px;
+          gap: 20px;
+          flex-grow: 1;
+      }
+
+
+  .tablero {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #34495e;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 400px;
+  }
+
+
+
+  .jugador.arriba .fichas-jugador .ficha,
+  .jugador.abajo .fichas-jugador .ficha {
+    transform: rotate(0deg) !important;
+    /* Asegúrate de que están verticales */
+  }
+
+
+
+  .linea-fichas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 20px;
+    min-height: 200px;
+    width: 100%;
+  }
+  #linea-fichas-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    border: 2px solid #ecf0f1;
+    background-color: #34495e;
+    border-radius: 10px;
+  }
+  .titulo-linea-fichas {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px 0;
+    color: #ecf0f1;
+    font-weight: bold;
+  }
+  
+  #linea-fichas-izquierda,
+  #linea-fichas-derecha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%; /* Cada uno ocupa el 45% del ancho del tablero */
+    border: 2px solid #ecf0f1;
+    background-color: #34495e;
+    border-radius: 10px;
+  }
+  
+  #linea-fichas-izquierda {
+    margin-right: 5px;
+  }
+  
+  #linea-fichas-derecha {
+    margin-left: 5px;
+  }
+  
+
+  .fila-fichas {
+    display: flex;
+    gap: 14px;
+    margin: 5px 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+    min-height: 90px;
+  }
+
+  .jugador {
+    background-color: #34495e;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .jugador.izquierda {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .jugador.derecha {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .jugador.arriba {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .jugador.abajo {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .fichas-jugador {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .jugador.izquierda .fichas-jugador,
+  .jugador.derecha .fichas-jugador {
+    flex-direction: column;
+  }
+
+  .jugador.arriba .fichas-jugador,
+  .jugador.abajo .fichas-jugador {
+    flex-direction: row;
+  }
+
+.ficha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100px;
+  background-color: #ecf0f1;
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin: 5px;
+  transform: rotate(0deg); /* Por defecto, las fichas no rotan */
+}
+
+.ficha.mula {
+  transform: rotate(0deg) !important; /* Las fichas mulas nunca rotan */
+}
+
+.ficha.rotada {
+  transition: transform 0.3s ease; /* Animación suave al rotar */
+}
+
+
+  .jugador .ficha {
+    transform: rotate(90deg);
+    /* Fichas paradas */
+  }
+
+
+
+  .ficha-value {
+    width: 50px; /* Tamaño fijo para las imágenes dentro de la ficha */
+    height: 50px; /* Tamaño fijo para mantener proporciones */
+  }
+
+
+  .tablero .ficha {
+    transform: rotate(0deg);
+  }
+
+  .tablero .ficha.rotada {
+    transform: rotate(180deg);
+  }
+
+  .tablero .ficha.horizontal {
+    transform: rotate(90deg);
+  }
+
+  .turno-actual {
+    border: 3px solid #e74c3c;
+  }
+
+  h3 {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 25%;
+    max-width: 300px;
+  }
+
+  .historial,
+  .marcador,
+  .instrucciones {
+    background-color: #34495e;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 20px;
+    color: #ecf0f1;
+    height: auto;
+    overflow: auto;
+  }
+
+  .historial {
+    max-height: 900px;
+    overflow-y: auto;
+    background-color: #34495e;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 20px;
+    color: #ecf0f1;
+  }
+
+  .layout-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+    max-width: 1400px;
+  }
+
+  .marcador {
+    text-align: left;
+  }
+
+  .juego-container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 200px 1fr 200px;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .layout-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .juego-container {
+      width: 100%;
+    }
+
+    .info-container {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  .boton-salir {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .boton-salir:hover {
+    background-color: #c0392b;
+  }
+
+  .marcador div {
+    margin: 10px 0;
+  }
+
+  .marcador .jugador-barra {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+
+  .marcador .barra-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .barra-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin: 5px;
+  }
+
+  .barra {
+    width: 100%;
+    height: 30px;
+    background: #ecf0f1;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .barra .progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px 0 0 15px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: width 0.5s ease;
+  }
+
+  .marcador .barra {
+    width: 100%;
+    height: 25px;
+    background: #ecf0f1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .marcador .barra.jugador1 {
+    background-color: #2ecc71;
+  }
+
+  .marcador .barra .progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 12px 0 0 12px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: width 0.5s ease;
+  }
+
+  .marcador .jugador-label {
+    font-size: 16px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    width: 150px;
+  }
+
+  .jugador-label {
+    font-size: 14px;
+    color: #ecf0f1;
+    margin-bottom: 5px;
+  }

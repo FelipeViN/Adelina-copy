@@ -3,10 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    margin-left: 20px;
-    margin-right: 20px;
+    width: 85%;
   }
 
   #probabilidades-container {
@@ -316,6 +313,7 @@
   .instrucciones{
     margin-left: 12.5%;
     margin-right: 10%;
+    font-size: 32;
   }
 
   .historial {
@@ -340,8 +338,7 @@
   }
 
   .juego-container {
-  margin-left: 20px;
-  margin-right: 20px;
+    width: 90%;
     display: grid;
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: 200px 1fr 200px;

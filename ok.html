@@ -38,12 +38,6 @@
 
   <div id="juego" style="display: none;">
     <div class="layout-container">
-      <div class="info-container">
-        <div class="historial" id="historial">
-          <h2>Movimientos</h2>
-          <ul id="lista-movimientos"></ul>
-        </div>
-      </div>
       <div class="juego-container">
         <div id="jugador-arriba" class="jugador arriba"></div>
         <div id="jugador-izquierda" class="jugador izquierda"></div>
@@ -60,17 +54,18 @@
         </div>
         <div id="jugador-derecha" class="jugador derecha"></div>
         <div id="jugador-abajo" class="jugador abajo"></div>
+        </div>
+      </div>
+      <div class="instrucciones" id="estrategia">
+        <h2>Estrategia Jugador 1</h2>
+        <p>- Identifica las mulas (fichas dobles).</p>
+        <p>- Juega la ficha más alta en cada turno.</p>
+        <p>- Observa los números que faltan en los extremos.</p>
       </div>
       <div class="info-container">
-        <div class="marcador" id="marcador">
-          <h2>Probabilidad de Ganar</h2>
-          <div id="probabilidades"></div>
-        </div>
-        <div class="instrucciones" id="estrategia">
-          <h2>Estrategia Jugador 1</h2>
-          <p>- Identifica las mulas (fichas dobles).</p>
-          <p>- Juega la ficha más alta en cada turno.</p>
-          <p>- Observa los números que faltan en los extremos.</p>
+        <div class="historial" id="historial">
+          <h2>Movimientos</h2>
+          <ul id="lista-movimientos"></ul>
         </div>
         <button class="boton-salir" onclick="regresarConfiguracion()">Salir</button>
       </div>
